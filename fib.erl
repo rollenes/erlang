@@ -5,12 +5,13 @@ fib (0) ->
     1;
 fib (1) ->
     1;
-fib (X) ->
+fib (X) when X > 1 ->
     fib(X - 1) + fib(X - 2).
 
 
 fib_test_() ->
     [
+        ?_assertError(function_clause, fib(-1)),
         ?_assertEqual(1, fib(0)),
         ?_assertEqual(1, fib(1)),
         ?_assertEqual(2, fib(2)),

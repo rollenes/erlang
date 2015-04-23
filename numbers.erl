@@ -17,6 +17,8 @@ arithmetic_test_() ->
         ?_assertEqual(4.0, 4/1),
         ?_assert(2.0 =:= 4/2),
 
+        ?_assertException(error, badarith, 5/0),
+
         ?_assertEqual(2, 5 div 2),
         ?_assertEqual(1, 5 rem 2),
 
