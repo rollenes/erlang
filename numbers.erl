@@ -26,3 +26,11 @@ arithmetic_test_() ->
         ?_assert(not(1960 =:= 19.6*100)),
         ?_assert(not(1960 == 19.6*100))
     ].
+
+base_notation_test_() ->
+    [
+        ?_assertEqual(8, 2#1000),
+        ?_assertEqual(8, 5#13),
+        ?_assertEqual(8, 8#10),
+        ?_assertEqual(26, 16#1A)
+    ].
